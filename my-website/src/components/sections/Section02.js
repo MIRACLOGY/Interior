@@ -3,10 +3,10 @@ import './Section02.css';
 
 const Section02 = () => {
     return (
-        <div className="section02">
-            <h2>section2</h2>
-            <p>Here are some of the projects I have worked on.</p>
-        </div>
+        <section className="section-02">
+            <h2>Section 02</h2>
+            <p>Content for section 02.</p>
+        </section>
     );
 };
 
