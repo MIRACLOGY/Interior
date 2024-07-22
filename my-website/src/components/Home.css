@@ -1,0 +1,11 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* 섹션 간 여백 추가 */
+}
+
+main>section:nth-child(even) {
+    background-color: #f0f0f0;
+    /* 짝수 번째 섹션의 배경색 설정 */
+}

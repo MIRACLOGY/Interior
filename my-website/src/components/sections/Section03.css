@@ -1,0 +1,69 @@
+.section-03 {
+    padding: 40px 20px;
+    /* 섹션의 패딩 추가 */
+    background-color: white;
+    /* 기본 배경색 */
+}
+
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.text-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text-container p {
+    font-size: 16px;
+    color: #777;
+    max-width: 600px;
+    margin: 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.image-item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.image-item.small-top-left {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.image-item.large-top-right {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.image-item.large-bottom-left {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.image-item.small-bottom-right {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
