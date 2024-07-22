@@ -3,6 +3,8 @@
     /* 섹션의 패딩 추가 */
     background-color: white;
     /* 기본 배경색 */
+    height: 100vh;
+    /* 화면 전체 높이 설정 */
 }
 
 .text-container {
@@ -27,12 +29,31 @@
 }
 
 .image-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 20px;
     padding: 0 20px;
+    height: calc(100vh - 80px);
+    /* 이미지 그리드의 높이 설정 (패딩을 제외한 높이) */
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* 상단의 너비 비율 1:3 */
+    grid-gap: 10px;
+    height: 50%;
+    /* 상단부 높이 설정 */
+}
+
+.bottom {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* 하단의 너비 비율 3:1 */
+    grid-gap: 10px;
+    height: 50%;
+    /* 하단부 높이 설정 */
 }
 
 .image-item {
@@ -48,22 +69,15 @@
     border-radius: 5px;
 }
 
-.image-item.small-top-left {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
+/* 모바일 화면을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .section-03 {
+        height: 50vh;
+        /* 모바일 화면에서 높이를 화면의 절반으로 설정 */
+    }
 
-.image-item.large-top-right {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
-.image-item.large-bottom-left {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-}
-
-.image-item.small-bottom-right {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    .image-grid {
+        height: calc(50vh - 80px);
+        /* 모바일 화면에서 이미지 그리드의 높이 설정 */
+    }
 }

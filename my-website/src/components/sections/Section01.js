@@ -8,19 +8,32 @@ const images = [mainImage1, mainImage2, mainImage3];
 
 const Section01 = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [fadeTransition, setFadeTransition] = useState(false);
 
     const handlePrevClick = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setFadeTransition(true);
+        setTimeout(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+            setFadeTransition(false);
+        }, 500); // 500ms 동안 전환 효과 적용
     };
 
     const handleNextClick = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setFadeTransition(true);
+        setTimeout(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+            setFadeTransition(false);
+        }, 500); // 500ms 동안 전환 효과 적용
     };
 
     return (
         <section className="section-01">
             <div className="image-container">
-                <img src={images[currentImageIndex]} alt="Main Section" className="main-image" />
+                <img
+                    src={images[currentImageIndex]}
+                    alt="Main Section"
+                    className={`main-image ${fadeTransition ? 'fade-out' : 'fade-in'}`}
+                />
                 <button className="view-projects-button">View projects</button>
                 <button className="prev-button" onClick={handlePrevClick}>&lt;</button>
                 <button className="next-button" onClick={handleNextClick}>&gt;</button>

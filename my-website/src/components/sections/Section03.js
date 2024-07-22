@@ -9,21 +9,24 @@ const Section03 = () => {
     return (
         <section className="section-03">
             <div className="text-container">
-                <h2>Designed for you</h2>
-                <p>We’ve designed and curated pieces that are a cut above your average home goods, because when you level up your everyday objects, you elevate your daily rituals. Let the magic happen.</p>
+                <h2>Example</h2>
             </div>
             <div className="image-grid">
-                <div className="image-item small-top-left">
-                    <img src={image1} alt="Design 1" />
+                <div className="top">
+                    <div className="image-item small-top-left">
+                        <img src={image1} alt="Design 1" />
+                    </div>
+                    <div className="image-item large-top-right">
+                        <img src={image2} alt="Design 2" />
+                    </div>
                 </div>
-                <div className="image-item large-top-right">
-                    <img src={image2} alt="Design 2" />
-                </div>
-                <div className="image-item large-bottom-left">
-                    <img src={image3} alt="Design 3" />
-                </div>
-                <div className="image-item small-bottom-right">
-                    <img src={image4} alt="Design 4" />
+                <div className="bottom">
+                    <div className="image-item large-bottom-left">
+                        <img src={image3} alt="Design 3" />
+                    </div>
+                    <div className="image-item small-bottom-right">
+                        <img src={image4} alt="Design 4" />
+                    </div>
                 </div>
             </div>
         </section>

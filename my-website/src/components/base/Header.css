@@ -8,13 +8,6 @@
     border-bottom: 1px solid #ddd;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
 .menu-icon {
     font-size: 24px;
     cursor: pointer;
@@ -25,6 +18,11 @@
     font-weight: bold;
     text-align: center;
     flex-grow: 1;
+    text-decoration: none;
+    color: #000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .social-icons {
@@ -86,4 +84,33 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 500;
+}
+
+/* 모바일 화면을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .site-title {
+        font-size: 18px;
+        /* 모바일 화면에서 글자 크기 조정 */
+    }
+
+    .social-icons {
+        display: none;
+        /* 모바일 화면에서 소셜 아이콘 숨기기 */
+    }
+
+    .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    .mobile-social-icons a {
+        font-size: 20px;
+        color: #000;
+    }
+
+    .mobile-social-icons a:hover {
+        color: #555;
+    }
 }
