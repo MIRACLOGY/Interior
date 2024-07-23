@@ -14,7 +14,7 @@ const Header = () => {
             <div className="menu-icon" onClick={toggleSidebar}>
                 <i className="fas fa-bars"></i>
             </div>
-            <Link to="/" className="site-title">DESIGN MIRACLOGY</Link>
+            <Link to="/Interior" className="site-title">DESIGN MIRACLOGY</Link>
             <div className="social-icons">
                 <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-instagram"></i>
@@ -28,7 +28,7 @@ const Header = () => {
             </div>
             <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/Interior">Home</Link></li>
                     <li><Link to="/projects">Projects</Link></li>
                     {/* <li><a href="/detail">Detail</a></li> */}
                     <li className="mobile-social-icons">
