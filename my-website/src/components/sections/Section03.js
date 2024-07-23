@@ -1,7 +1,7 @@
 import React from 'react';
-import { default as image1, default as image4 } from '../imgs/역삼동 작업실/20201018_221759.JPG';
-import { default as image2 } from '../imgs/사당동작업실/20200905_153055.JPG';
-import image3 from '../imgs/서초동오피스텔부스/20210418_194500.JPG';
+import { default as image1, default as image4 } from '../imgs/역삼동 작업실/1.jpg';
+import { default as image2 } from '../imgs/사당동 작업실/1.jpg';
+import image3 from '../imgs/서초동 오피스텔 부스/1.jpg';
 
 import './Section03.css';
 

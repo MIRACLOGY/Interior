@@ -118,14 +118,14 @@
 }
 
 .slider-button {
-    color: #000;
+    position: static;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
     border: none;
-    padding: 5px 10px;
-    /* 버튼 크기 조정 */
+    /* padding: 10px; */
     cursor: pointer;
-    font-size: 18px;
-    /* 버튼 폰트 크기 조정 */
-    z-index: 10;
+    font-size: 24px;
 }
 
 .slider-button:hover {

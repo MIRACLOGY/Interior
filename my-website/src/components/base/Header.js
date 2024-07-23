@@ -29,7 +29,7 @@ const Header = () => {
             <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <ul>
                     <li><Link to="/Interior">Home</Link></li>
-                    <li><Link to="/projects">Projects</Link></li>
+                    <li><Link to="/Interior/projects">Projects</Link></li>
                     {/* <li><a href="/detail">Detail</a></li> */}
                     <li className="mobile-social-icons">
                         <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
