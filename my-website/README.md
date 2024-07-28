@@ -2,12 +2,23 @@
 
 ## Init. Setting
 
+![img](./init.gif)
+
 1. Node.JS 설치
+    - 설치완료 후 CMD에 npm 입력시 영상처럼 설명 출력
 2. Git 설치
+    - 설치완료 후 CMD에 git 입력시 영상처럼 설명 출력 됨
 3. git clone
+    - 원하는 작업 위치에 폴더를 만들고 해당 위치에서 `git clone [리포지토리 주소]`
+    - 또는 원하는 작업 위치에 폴더를 만들고 zip으로 다운받아서 압축 풀기
 4. CMD 창에서 my-website 폴더로 이동
+    - 폴더 이동 명령어는 `cd [폴더 명]]`
+    - 상위 폴더로 이동하는 명령어는 `cd ..`
+    - 현재 폴더 내의 모든 파일 목록을 보는 명령어는 (windows)`dir`, (mac)`ls`
 5. npm install
+    - my-website 폴더 내에서 해야 함에 주의!
 6. npm run start
+    - my-website 폴더 내에서 해야 함에 주의!
 
 ### `npm start`
 
