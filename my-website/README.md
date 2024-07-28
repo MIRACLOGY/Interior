@@ -1,10 +1,18 @@
 # Main Source Page
 
-## Code
+## Init. Setting
+
+1. Node.JS 설치
+2. Git 설치
+3. git clone
+4. CMD 창에서 my-website 폴더로 이동
+5. npm install
+6. npm run start
 
 ### `npm start`
 
-로컬 테스트 용 명령어
+로컬 테스트 용 명령어   
+my-website 폴더 내에 있어야 함.
 
 ## Update
 
@@ -25,6 +33,7 @@
     - imageCount는 총 이미지 갯수
     - 콤마(,) 주의하기
 3. 다음 명령어 실행하기
+    - GIT 로그인 되어 있어야 함.
     ```
     git add
     git commit -m "project update"
