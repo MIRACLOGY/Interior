@@ -1,1 +1,3 @@
 # Interior
+
+Miraclogy Interior page
