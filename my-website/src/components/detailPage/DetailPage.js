@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import ImgJSON from '../imgs/imgs.json';
 import './DetailPage.css';
 
 const getProjectImages = (folderName, imageCount) => {
@@ -10,29 +12,24 @@ const getProjectImages = (folderName, imageCount) => {
     return images;
 };
 
-const DetailPage = ({ project, imageCount }) => {
+const DetailPage = () => {
+    const { projectId } = useParams();
+    const projectData = ImgJSON.projects.find(p => p.id === parseInt(projectId));
+    const project = projectData.name;
+    const imageCount = projectData.imageCount;
     const images = getProjectImages(project, imageCount);
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const handlePrevClick = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
-    };
-
-    const handleNextClick = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
-    };
 
     return (
         <div className="detail-page">
             <h2>{project}</h2>
-            <div className="image-slider">
-                <button className="slider-buttonD prev-button" onClick={handlePrevClick}>
-                    &lt;
-                </button>
-                <img src={images[currentIndex]} alt={`${project} image ${currentIndex + 1}`} className="slider-image" />
-                <button className="slider-buttonD next-button" onClick={handleNextClick}>
-                    &gt;
-                </button>
+            <div className="image-grid">
+                {images.map((image, index) => (
+                    <div key={index} className="image-card">
+                        <div className="project-image-container">
+                            <img src={image} alt={`${project} image ${index + 1}`} className="project-image" />
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );

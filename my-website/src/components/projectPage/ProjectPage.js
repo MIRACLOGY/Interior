@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import DetailPage from '../detailPage/DetailPage';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ImgJSON from '../imgs/imgs.json';
 import './ProjectPage.css';
 
@@ -11,51 +11,34 @@ const getRandomImage = (folderName, imageCount) => {
 };
 
 const ProjectPage = () => {
-    const projects = Object.keys(ImgJSON);
+    const projects = ImgJSON.projects;
+    const navigate = useNavigate();
 
     const initialImages = {};
     projects.forEach(project => {
-        initialImages[project] = getRandomImage(project, ImgJSON[project]);
+        initialImages[project.id] = getRandomImage(project.name, project.imageCount);
     });
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentProject, setCurrentProject] = useState(null);
-    const [projectImages] = useState(initialImages);
-
-    const openModal = (project) => {
-        setCurrentProject(project);
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setCurrentProject(null);
+    const handleCardClick = (projectId) => {
+        navigate(`/Interior/projects/${projectId}`);
     };
 
     return (
         <div className="project-page">
             <div className="project-grid">
-                {projects.map((project, index) => (
-                    <div key={index} className="project-card" onClick={() => openModal(project)}>
+                {projects.map((project) => (
+                    <div key={project.id} className="project-card" onClick={() => handleCardClick(project.id)}>
                         <div className="project-image-container">
                             <img
-                                src={projectImages[project]}
-                                alt={project}
+                                src={initialImages[project.id]}
+                                alt={project.name}
                                 className="project-image"
                             />
+                            <div className="project-title">{project.name}</div>
                         </div>
-                        <p>{project}</p>
                     </div>
                 ))}
             </div>
-            {isModalOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <span className="close" onClick={closeModal}>&times;</span>
-                        <DetailPage project={currentProject} imageCount={ImgJSON[currentProject]} />
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
